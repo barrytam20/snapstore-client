@@ -6,9 +6,9 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'snap',
+  selector: 'thumb',
   styles: [`
-    .snap {
+    .thumb {
       padding: 10px;
       border-radius: 2px;
       width: 100%;
@@ -50,7 +50,7 @@ import {
   `],
   template: `
     <div
-      class="snap row shadow-1"
+      class="thumb row shadow-1"
       (mouseenter)="toggleDelete()"
       (mouseleave)="toggleDelete()"
     >
@@ -60,11 +60,11 @@ import {
       <img 
         [src]="image.thumbnail" 
         class="responsive-img"
-        (click)="onDisplay()"/>  
+        (click)="onRoute()"/>  
     </div>
   `
 })
-export class Snap {
+export class Thumb {
   @Input() image = {};
   @Output() deleted = new EventEmitter();
   @Output() displayed = new EventEmitter();
@@ -79,7 +79,7 @@ export class Snap {
     this.deleted.next(this.image);
   }
 
-  onDisplay(){
+  onRoute(){
     this.displayed.next(this.image);
   }
 }

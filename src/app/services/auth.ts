@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { StoreHelper } from './utils/store-helper';
-import { Store} from '../store';
+import { Store } from '../stores/store';
 import { ApiService } from './notes/api';
 import {Observable} from 'rxjs/Observable';
 import {CanActivate, Router} from '@angular/router';

@@ -6,7 +6,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import { ImageUploadModule } from 'angular2-image-upload'
 import { BusyModule } from 'angular2-busy';
 import { App, routes, providers } from './app'
-import { Main, Notes, About, Auth, Images } from './app/containers'
+import { Main, Notes, About, Auth, Images, FullImage } from './app/containers'
 
 import "materialize-css";
 import "angular2-materialize";
@@ -17,7 +17,7 @@ import {
   NoteCard,
   NoteCreator,
   ColorPicker,
-  Snap,
+  Thumb,
   SnapCreator
 } from './app/ui'
 
@@ -33,7 +33,8 @@ import {
     About,
     Auth,
     Images,
-    Snap,
+    FullImage,
+    Thumb,
     SnapCreator
   ],
   imports: [

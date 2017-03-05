@@ -1,6 +1,6 @@
 import * as services from './services';
-import { Store } from './store';
-import { ImageStore } from './image-store'
+import { Store } from './stores/store';
+import { ImageStore } from './stores/image-store'
 export { App } from './app';
 export { routes } from './routes';
 

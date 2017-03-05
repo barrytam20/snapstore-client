@@ -1,7 +1,8 @@
 import { Component, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MaterializeAction } from 'angular2-materialize';
 import { ImageService } from '../services';
-import { ImageStore } from '../image-store';
+import { ImageStore } from '../stores/image-store';
 import 'rxjs/Rx';
 
 @Component({
@@ -29,43 +30,33 @@ import 'rxjs/Rx';
       </div>    
       <div class="images col-sm-8">
         <div class="row between-md">
-          <snap
+          <thumb
             class="col-md-4"
             *ngFor="let image of images"
             [image]="image"
             (deleted)="onImageDeleted($event)"
-            (displayed)="onImageDisplayed($event)"
+            (displayed)="onRouteToImage($event)"
           >
-          </snap>
+          </thumb>
         </div>
       </div>
     </div>  
-<!-- Modal Trigger -->
-<a class="waves-effect waves-light btn modal-trigger" (click)="openModal()">Modal</a>
- 
-<!-- Modal Structure -->
-<div id="modal1" class="modal bottom-sheet" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
-  <div class="modal-content">
-    <h4>Modal Header</h4>
-    <p>A bunch of text</p>
-  </div>
-  <div class="modal-footer">
-    <a class="waves-effect waves-green btn-flat" (click)="closeModal()">Close</a>
-    <a class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
-</div>
-
   `
 })
 export class Images {
   images = [];
+  userId = "";
   busyCreating;
 
   constructor(
     private store: ImageStore,
-    private imageService: ImageService
+    private imageService: ImageService,
+    private router: Router,
+    private route: ActivatedRoute,
   ) {
-    this.imageService.getImageByUser('/user/123/images')
+    this.userId = route.snapshot.params['userId']; 
+
+    this.imageService.getImageByUser(`/user/${this.userId}/images`)
     .subscribe();
 
     this.store.changes.pluck('images')
@@ -88,31 +79,7 @@ export class Images {
     .subscribe();
   }
 
-  onImageDisplayed(image){
-    this.getImageContent(image).then((imageContent) => {
-      //console.log(imageContent);
-    })
+  onRouteToImage(image){
+    this.router.navigate([`image/${image.imageId}`]);
   }
-
-  private getImageContent(image): Promise<string>{
-    return new Promise((resolve, reject) => {
-      if(image.imageContent){
-        resolve(image.imageContent);
-      } else {
-        this.imageService.getImage(`/image/${image.imageId}`)
-        .subscribe((res) => {
-          resolve(res.imageContent);
-        });
-      }
-    });
-  }
-
-  modalActions = new EventEmitter<string|MaterializeAction>();
-  openModal() {
-    this.modalActions.emit({action:"modal",params:['open']});
-  }
-  closeModal() {
-    this.modalActions.emit({action:"modal",params:['close']});
-  }
-
 }

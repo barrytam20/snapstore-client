@@ -2,16 +2,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Injectable } from '@angular/core';
 import 'rxjs/Rx';
 
-export interface Image {
-  imageId: string;
-  thumbnail: string;
-  userId: string;
-  postDate?: number;
-  imageContent?: string;
-}
-
 export interface State {
-  images: Array<Image>
+  images: Array<string>
 }
 
 const defaultState = {
@@ -21,7 +13,7 @@ const defaultState = {
 const _store = new BehaviorSubject<State>(defaultState);
 
 @Injectable()
-export class ImageStore {
+export class UserStore {
   private _store = _store;
   changes = this._store.asObservable().distinctUntilChanged()
 
@@ -36,4 +28,5 @@ export class ImageStore {
   purge() {
     this._store.next(defaultState);
   }
+
 }

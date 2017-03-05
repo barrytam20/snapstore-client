@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../services'
+import { Router } from '@angular/router'
+import { AuthService } from '../services';
 
 @Component({
   selector: 'app-bar',
@@ -17,7 +18,7 @@ import { AuthService } from '../services'
     }
     .link {
       color: white;
-      font-size: 24px;
+      font-size: 10px;
       font-weight: 400;
       cursor: pointer;
     }
@@ -30,11 +31,14 @@ import { AuthService } from '../services'
       <nav class="col-xs-2">
         <div class="row middle-xs between-xs">
           <span [routerLink]="['', 'about']" class="link">About</span>
-          <span [routerLink]="['', 'images']" class="link">Images</span>
           <span 
             class="link"
-            (click)="signout()"
-          >
+            (click)="toMyImages()">
+            Images
+          </span>
+          <span 
+            class="link"
+            (click)="signout()">
             signout
           </span>
         </div>
@@ -44,10 +48,15 @@ import { AuthService } from '../services'
 })
 export class AppBar {
   constructor(
+    private router: Router,
     private authService: AuthService
   ) {}
 
   signout(){
     this.authService.signout();
+  }
+
+  toMyImages(){
+    this.router.navigate([`images/123`]);
   }
 }

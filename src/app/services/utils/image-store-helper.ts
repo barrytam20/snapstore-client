@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ImageStore } from '../../image-store';
+import { ImageStore } from '../../stores/image-store';
 
 @Injectable()
 export class ImageStoreHelper {

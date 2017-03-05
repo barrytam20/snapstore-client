@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NoteService } from '../services';
-import { Store } from '../store';
+import { Store } from '../stores/store';
 import 'rxjs/Rx';
 
 @Component({

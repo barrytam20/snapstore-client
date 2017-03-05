@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Image } from '../../image-store';
+import { Image } from '../../stores/image-store';
 import { ImageStoreHelper } from '../utils/image-store-helper';
 import { LambdaService } from './lambda';
 import 'rxjs/Rx';
