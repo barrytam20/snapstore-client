@@ -4,3 +4,4 @@ export { NoteCreator } from './note-creator';
 export { ColorPicker } from './color-picker';
 export { Thumb } from './images/thumb';
 export { SnapCreator } from './images/snap-creator';
+export { Dropdown } from './dropdown';

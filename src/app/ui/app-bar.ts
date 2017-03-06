@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
 import { AuthService } from '../services';
+import { ImageService } from '../services';
 
 @Component({
   selector: 'app-bar',
@@ -24,9 +25,9 @@ import { AuthService } from '../services';
     }
   `],
   template: `
-    <header class="app-bar row middle-xs">
-      <span [routerLink]="['']" class="logo col-xs-10">
-        Retain
+    <header class="app-bar row left-xs">
+      <span class="logo col-xs-10">
+        <dropdown></dropdown>
       </span>
       <nav class="col-xs-2">
         <div class="row middle-xs between-xs">

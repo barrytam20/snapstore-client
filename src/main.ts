@@ -18,7 +18,8 @@ import {
   NoteCreator,
   ColorPicker,
   Thumb,
-  SnapCreator
+  SnapCreator,
+  Dropdown
 } from './app/ui'
 
 @NgModule({
@@ -35,7 +36,8 @@ import {
     Images,
     FullImage,
     Thumb,
-    SnapCreator
+    SnapCreator,
+    Dropdown
   ],
   imports: [
     BrowserModule,

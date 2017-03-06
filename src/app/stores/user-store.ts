@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 import 'rxjs/Rx';
 
 export interface State {
-  images: Array<string>
+  users: Array<string>
 }
 
 const defaultState = {
-  images: []
+  users: []
 }
 
 const _store = new BehaviorSubject<State>(defaultState);

@@ -40,6 +40,7 @@ import 'rxjs/Rx';
           </thumb>
         </div>
       </div>
+
     </div>  
   `
 })
@@ -68,7 +69,7 @@ export class Images {
       imageId: Date.now().toString(),
       imageContent: imageEvent.src,
       postDate: Date.now(),
-      userId: '123'
+      userId: this.userId
     }
     this.busyCreating = this.imageService.createImage('/image', image)
       .subscribe();
