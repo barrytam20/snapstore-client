@@ -27,7 +27,7 @@ import { ImageService } from '../services';
   template: `
     <header class="app-bar row left-xs">
       <span class="logo col-xs-10">
-        <dropdown></dropdown>
+        <dropdown initialValue='123'></dropdown>
       </span>
       <nav class="col-xs-2">
         <div class="row middle-xs between-xs">
@@ -36,11 +36,6 @@ import { ImageService } from '../services';
             class="link"
             (click)="toMyImages()">
             Images
-          </span>
-          <span 
-            class="link"
-            (click)="signout()">
-            signout
           </span>
         </div>
       </nav>

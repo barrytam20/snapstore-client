@@ -13,7 +13,6 @@ import { UserStore } from '../stores/user-store';
                 <select 
                   [ngModel]="initialValue" 
                   (ngModelChange)="change($event)" 
-                  id="selectExample" 
                   materialize="material_select" 
                   [materializeSelectOptions]="users"
                 >
@@ -43,7 +42,9 @@ export class Dropdown {
   }
   
   change(newValue) {
-    Materialize.toast(`view photos from ${newValue}`, 2000)
+    Materialize.toast(`viewing photos from ${newValue}`, 2000)
     this.modelChange.emit(newValue);
+    this.router.navigate([`images/${newValue}`]);
   }
+
 }

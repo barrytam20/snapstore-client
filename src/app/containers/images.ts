@@ -55,13 +55,15 @@ export class Images {
     private router: Router,
     private route: ActivatedRoute,
   ) {
-    this.userId = route.snapshot.params['userId']; 
+    this.route.params.subscribe(params => {
+      this.userId = params['userId'];
 
-    this.imageService.getImageByUser(`/user/${this.userId}/images`)
-    .subscribe();
+      this.imageService.getImageByUser(`/user/${this.userId}/images`)
+      .subscribe();
 
-    this.store.changes.pluck('images')
-    .subscribe((images: any) =>  this.images = images);
+      this.store.changes.pluck('images')
+      .subscribe((images: any) =>  this.images = images);
+    })
   }
 
   onCreateSnap(imageEvent) {
