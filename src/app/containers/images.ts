@@ -60,10 +60,10 @@ export class Images {
 
       this.imageService.getImageByUser(`/user/${this.userId}/images`)
       .subscribe();
+    });
 
       this.store.changes.pluck('images')
       .subscribe((images: any) =>  this.images = images);
-    })
   }
 
   onCreateSnap(imageEvent) {

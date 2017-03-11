@@ -27,16 +27,11 @@ import { ImageService } from '../services';
   template: `
     <header class="app-bar row left-xs">
       <span class="logo col-xs-10">
-        <dropdown initialValue='123'></dropdown>
+        <dropdown></dropdown>
       </span>
       <nav class="col-xs-2">
         <div class="row middle-xs between-xs">
-          <span [routerLink]="['', 'about']" class="link">About</span>
-          <span 
-            class="link"
-            (click)="toMyImages()">
-            Images
-          </span>
+          <span [routerLink]="['', 'newAlbum']" class="link">Create New Album</span>
         </div>
       </nav>
     </header>
@@ -48,11 +43,4 @@ export class AppBar {
     private authService: AuthService
   ) {}
 
-  signout(){
-    this.authService.signout();
-  }
-
-  toMyImages(){
-    this.router.navigate([`images/123`]);
-  }
 }

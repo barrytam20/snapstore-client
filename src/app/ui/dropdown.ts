@@ -1,6 +1,6 @@
 import * as Materialize from "angular2-materialize";
 import { MaterializeDirective } from "angular2-materialize";
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Output, EventEmitter } from "@angular/core";
 import { Router } from '@angular/router';
 import { ImageService } from '../services';
 import { UserStore } from '../stores/user-store';
@@ -16,7 +16,7 @@ import { UserStore } from '../stores/user-store';
                   materialize="material_select" 
                   [materializeSelectOptions]="users"
                 >
-                  <option value="" disabled selected>Select album</option>
+                  <option value="" disabled selected>select album</option>
                   <option *ngFor="let user of users" [value]="user">{{user}}</option>
               </select>
           </div>
@@ -24,10 +24,10 @@ import { UserStore } from '../stores/user-store';
     `
 })
 export class Dropdown {
-  @Input() initialValue: string;
   @Output() modelChange = new EventEmitter();
 
   users = [];
+  initialValue;
 
   constructor(
     private store: UserStore,
@@ -38,7 +38,9 @@ export class Dropdown {
     .subscribe();
 
     this.store.changes.pluck('users')
-    .subscribe((users: any) =>  this.users = users);    
+    .subscribe((users: any) =>  this.users = users);   
+
+    this.initialValue = "select album"
   }
   
   change(newValue) {

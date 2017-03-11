@@ -6,7 +6,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 import { ImageUploadModule } from 'angular2-image-upload'
 import { BusyModule } from 'angular2-busy';
 import { App, routes, providers } from './app'
-import { Main, Notes, About, Auth, Images, FullImage } from './app/containers'
+import { Main, Notes, NewAlbum, Auth, Images, FullImage } from './app/containers'
 
 import "materialize-css";
 import "angular2-materialize";
@@ -31,7 +31,7 @@ import {
     Notes,
     NoteCreator,
     ColorPicker,
-    About,
+    NewAlbum,
     Auth,
     Images,
     FullImage,
