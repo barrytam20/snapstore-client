@@ -17,7 +17,7 @@ import { UserStore } from '../stores/user-store';
                   [materializeSelectOptions]="users"
                 >
                   <option value="" disabled selected>select album</option>
-                  <option *ngFor="let user of users" [value]="user">{{user}}</option>
+                  <option *ngFor="let user of users" [value]="user">{{decode(user)}}</option>
               </select>
           </div>
       </div>
@@ -44,9 +44,12 @@ export class Dropdown {
   }
   
   change(newValue) {
-    Materialize.toast(`viewing photos from ${newValue}`, 2000)
+    Materialize.toast(`viewing photos from ${newValue}`, 2000);
     this.modelChange.emit(newValue);
     this.router.navigate([`images/${newValue}`]);
   }
 
+  decode(input: string): string{
+    return decodeURI(input);
+  }
 }

@@ -5,33 +5,32 @@ import { ImageService } from '../services';
 @Component({
   selector: 'full-image-container',
   styles: [`
-.container {
-    width: 80%;
-    height: 80%;
-    position: absolute;    
-    margin:auto;
-    top:15;
-    bottom:0;
-    left:0;
-    right:0;
-    background-color: #aaa;
+  .container {
+      width: 80%;
+      height: 80%;
+      position: absolute;    
+      margin:auto;
+      top:15;
+      bottom:0;
+      left:0;
+      right:0;
+      background-color: #aaa;
     }
-img {
-    max-width: 100%;
-    max-height: 100%;  
-    position: absolute;
-    margin:auto;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
+  img {
+      max-width: 100%;
+      max-height: 100%;  
+      position: absolute;
+      margin:auto;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
     } 
   `],  
   template: `
-  <div class="container">
-      <img 
-        [src]="imageContent"/>  
-        </div>
+    <div class="container">
+        <img [src]="imageContent"/>  
+    </div>
   `
 })
 export class FullImage {

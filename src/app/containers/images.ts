@@ -71,8 +71,8 @@ export class Images {
       imageId: Date.now().toString(),
       imageContent: imageEvent.src,
       postDate: Date.now(),
-      userId: this.userId
-    }
+      userId: encodeURI(this.userId)
+    };
     this.busyCreating = this.imageService.createImage('/image', image)
       .subscribe();
   }

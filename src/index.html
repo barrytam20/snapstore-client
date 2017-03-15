@@ -2,13 +2,11 @@
 <html>
   <head>
     <meta charset=UTF-8>
-    <title>Snapstore</title>
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>snapstore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="global.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" rel=”stylesheet” >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <base href="/">
@@ -20,6 +18,10 @@
     <app>
       ...before angular loads
     </app>
+
+    <script>
+  history.pushState({}, "entry page", location.hash.substring(1));
+</script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>

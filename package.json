@@ -6,7 +6,10 @@
   "scripts": {
     "test": "webpack --config webpack.spec.ts --progress --color && karma start",
     "start": "webpack-dev-server --inline --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
-    "api": "angularclass-server --api retain --port 3500 --auth"
+    "api": "angularclass-server --api retain --port 3500 --auth",
+    "build": "rimraf dist && webpack --progress --profile --bail --optimize-minimize && cp src/index.html dist && cp src/favicon.ico dist",
+    "deploy": "aws s3 sync dist/ s3://snapstore.com",
+    "serve:s3": "npm run build && npm run deploy"
   },
   "author": "Barry Tam",
   "license": "ISC",

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
-import { AuthService } from '../services';
 import { ImageService } from '../services';
 
 @Component({
@@ -39,8 +38,7 @@ import { ImageService } from '../services';
 })
 export class AppBar {
   constructor(
-    private router: Router,
-    private authService: AuthService
+    private router: Router
   ) {}
 
 }
