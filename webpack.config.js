@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var config = {
   cache: true,
@@ -32,7 +33,11 @@ var config = {
       jQuery: "jquery",
       "window.jQuery": "jquery",
       Hammer: "hammerjs/hammer"
-    })
+    }),
+    new CopyWebpackPlugin([{
+      from: 'src/pics',
+      to: './pics'
+    }])
   ],
 
   resolve: {

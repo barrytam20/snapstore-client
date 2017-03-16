@@ -9,7 +9,7 @@ import { MaterializeDirective } from "angular2-materialize";
       <main class="main">
          <router-outlet></router-outlet>
           <div class="parallax-container">
-            <div class="parallax" materialize="parallax"><img src="../../pics/_ST_8244.jpg"></div>
+            <div class="parallax" materialize="parallax"><img src="./pics/_ST_8244.jpg"></div>
           </div>
           <div class="section white">
             <div class="row container">
@@ -18,7 +18,7 @@ import { MaterializeDirective } from "angular2-materialize";
             </div>
           </div>
           <div class="parallax-container">
-            <div class="parallax" materialize="parallax"><img src="../../pics/2014_Land-Rover_CA-3586.jpg"></div>
+            <div class="parallax" materialize="parallax"><img src="./pics/2014_Land-Rover_CA-3586.jpg"></div>
           </div>         
       </main>
     </div>
