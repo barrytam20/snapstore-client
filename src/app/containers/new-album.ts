@@ -8,6 +8,7 @@ import { UserStoreHelper } from '../services/utils/user-store-helper';
 @Component({
   selector: 'new-album-container',
   template: `
+  <app-bar></app-bar>
     <div class="input-field col s12">
       <input 
         id="album_name" 

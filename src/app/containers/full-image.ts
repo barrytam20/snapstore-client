@@ -28,6 +28,7 @@ import { ImageService } from '../services';
     } 
   `],  
   template: `
+  <app-bar></app-bar>
     <div class="container">
         <img [src]="imageContent"/>  
     </div>

@@ -6,12 +6,9 @@ import { Main, Notes, NewAlbum, Auth, Images, FullImage } from './containers';
 export const routes: ModuleWithProviders = RouterModule.forRoot([
   {
     path: '',
-    component: Main,
-    children: [
-      { path: 'newAlbum', component: NewAlbum },
-      { path: 'images/:userId', component: Images },
-      { path: 'image/:imageId', component: FullImage}
-    ]
+    component: Main
   },
-  { path: '**', redirectTo: 'newAlbum' }
+  { path: 'newAlbum', component: NewAlbum },
+  { path: 'images/:userId', component: Images },
+  { path: 'image/:imageId', component: FullImage}
 ]);

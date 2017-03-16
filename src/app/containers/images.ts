@@ -19,6 +19,7 @@ import 'rxjs/Rx';
     '/node_modules/angular2-busy/build/style/busy.css'
   ],
   template: `
+  <app-bar></app-bar>
     <div class="row center-xs images">
       <div class="col-xs-6 creator">
         <snap-creator (createSnap)="onCreateSnap($event)"></snap-creator>
